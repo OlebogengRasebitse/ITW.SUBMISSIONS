@@ -1,5 +1,11 @@
+const customers = '1';
+const location = 'RSA';
+const currency = null;
 
-/*FREE_WARNING = 'Free shipping only applies to single customer orders'
+console.log("location")
+/***
+FREE_WARNING = 'Free shipping only applies to
+single customer orders'
 BANNED_WARNIN = 'Unfortunately we do not ship to your country of residence'
 NONE_SELECTED = '0'
 
@@ -32,4 +38,4 @@ location = 'NK' ? console.log(WARNING) : console.log('price', currency, shoes + 
 
 customers = '1'
 const location = 'RSA'
-currency = null
+currency = null*/
