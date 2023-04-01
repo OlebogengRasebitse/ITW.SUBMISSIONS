@@ -2,7 +2,9 @@ const date = 2050;
 const status = 'Parent';
 let count = 0;
 
-
+if (location = RSA) { 
+	shipping === 400  && currency === 'R' 
+}
 
 if (date === 2050) {
 
