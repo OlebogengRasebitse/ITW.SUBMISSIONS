@@ -4,7 +4,7 @@ const BANNED_WARNING = ('Unfortunately we do not ship to your country of residen
 const customers = ('1');
 let Location = ('RSA');
 
-
+//Shipping location conditions.
 let shipping;
 if (Location === 'RSA') {
    shipping = 400;
@@ -13,16 +13,15 @@ else if (Location === 'NAM') {
    shipping = 600;
 }
 else if (location === 'NK') {
+   //We do not ship to North Korea.
    shipping = null;
    console.log(BANNED_WARNING);
-
 }
 
 else { shipping = 800; }
 
-console.log(BANNED_WARNING);
 
-
+//Currency coditions.
 let currency;
 if (Location === 'RSA') {
    currency = 'R'
