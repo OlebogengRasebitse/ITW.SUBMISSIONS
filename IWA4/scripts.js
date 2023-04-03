@@ -2,10 +2,6 @@ const date = 2050;
 const status = 'Parent';
 let count = 0;
 
-if (location = RSA) { 
-	shipping === 400  && currency === 'R' 
-}
-
 if (date === 2050) {
 
 	console.log('January', 'New Year’s Day');
@@ -15,7 +11,7 @@ if (date === 2050) {
 	console.log(date, 'Freedom Day')
      count += 4
 
-	if (status ==="student") {
+	if (status ==='student') {
 	  console.log('June', 'Youth Day')
 		  count += 1
     }
