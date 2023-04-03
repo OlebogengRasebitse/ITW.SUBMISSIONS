@@ -1,6 +1,6 @@
 // scripts.js
 
-import { display } from "./alex.js";
-import { displayJ } from "./johannes.js";
-import { displayN } from "./nwabisa.js";
+import { display as displayA } from "./alex.js";
+import { display as displayB } from "./johannes.js";
+import { display as displayC } from "./nwabisa.js";
 
