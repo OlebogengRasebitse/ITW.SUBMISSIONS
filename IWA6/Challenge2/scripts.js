@@ -25,7 +25,6 @@ console.log(balance);
 let newAmount = 'R' + balance.toFixed(2);
 
 
-
 if (hourOfDay === 0 && minuteOfDay === 0) {
     console.log(newAmount);
 }
