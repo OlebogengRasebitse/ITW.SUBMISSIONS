@@ -7,20 +7,34 @@ const hourOfDay = 00;
 const minuteOfDay = 00;
 
 // Only change below this line
+ 
+//convert the string '12%' into a number
+const taxNumber = parseFloat(tax) / 100;
+console.log(taxNumber)
 
-if (hourOfDay && minuteOfDay === 00){
-    console.log(balance)
+//Salary after tax.
+let salaryAfterTax = salary - (salary * taxNumber)
+console.log(salaryAfterTax)
+
+
+//Final balance.
+const balance = salaryAfterTax - transport - food - rent;
+console.log(balance);
+
+// Using 'toFixed method' & concatenation 
+const newAmount = 'R' + balance.toFixed(2);
+
+
+
+ if (hourOfDay === 0 && minuteOfDay === 0) {
+   console.log(newAmount);
 }
-else {
-    console.log(undefined)
-}
+else if (hourOfDay === undefined && minuteOfDay === undefined) 
+{ console.log(undefined);}
 
 
 
-if hourOfDay && (minuteOfDay !== null) && (hourOfDay == '00') && (minuteOfDay == '00') {
-    const taxAsDecimal = tax / '100'
-  const startingAfterTax = salary * '1' - taxAsDecimal
-    const balance = starting - transport - food - rent
-}
-    
-console.log(balance.toFixed(3))
+
+
+
+
