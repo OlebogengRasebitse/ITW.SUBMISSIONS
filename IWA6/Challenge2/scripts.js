@@ -6,6 +6,7 @@ const transport = 10.2;
 const hourOfDay = 00;
 const minuteOfDay = 00;
 
+
 // Only change below this line
 
 //convert the string '12%' into a number
@@ -15,7 +16,6 @@ console.log(taxNumber)
 //Salary after tax.
 let salaryAfterTax = salary - (salary * taxNumber)
 console.log(salaryAfterTax)
-
 
 //Final balance.
 const balance = salaryAfterTax - transport - food - rent;
