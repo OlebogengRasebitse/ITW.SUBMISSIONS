@@ -31,6 +31,11 @@ if (hourOfDay === 0 && minuteOfDay === 0) {
 else
  {console.log(newAmount = 0) }
 
+
+
+
+
+ 
 //(hourOfDay === undefined && minuteOfDay === undefined) { console.log(undefined); }
 
 
