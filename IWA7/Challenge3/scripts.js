@@ -11,18 +11,25 @@ const divider = '----------------------------------'
 // Only change below this line
 
 //Remove negative amount. 
-const owed = parseFloat(leoBalance + sarahBalance)
-const absOwed = Math.abs(owed);
-const absStr = absOwed.toString();
-
-//Owed
-const finalOwed = "R" + absStr;
+// const owed = (parseFloat(leoBalance) + parseFloat(sarahBalance))
+// const absOwed = Math.abs(owed);
+// const absStr = absOwed.toString();
 
 
 
-// const leo = `${leoName} + {leoSurname} + \"Owed\" + \"R\" + {sarahBalance}"
-// const sarah = "{leoName} + {surname} + \"Owed\" + \"R\" + {sarahBalance}"
-// const total = "Total amount owed: "
-// const result = leo + sarah + divider + divider + total + owed + divider
 
-console.log(`${leoName} ${leoSurname}  (${finalOwed})`)
+const owed = ('R' + parseInt(leoBalance + sarahBalance))
+const new = convertToPossitive(owed)
+
+
+
+
+
+
+
+
+
+//  ADD .TRIM TO ELIMONATE ANY WHITE SPACE.
+
+// -1*
+
