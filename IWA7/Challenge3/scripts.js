@@ -18,18 +18,14 @@ const divider = '----------------------------------'
 
 
 
-const owed = ('R' + parseInt(leoBalance + sarahBalance))
-const new = convertToPossitive(owed)
+const owed =  parseFloat(leoBalance) + parseFloat(sarahBalance);
+const positiveOwed = (-1* owed);
 
 
+const leo = `${leoName} ${leoSurname} (Owed:R ${(-1* leoBalance)})`
+const sarah = `${sarahName.trim()} ${sarahSurname}   (Owed:R ${(-1* sarahBalance).toFixed(2)})`;
+const total = `Total amount owed: R ${(positiveOwed).toFixed(2)}`
+const result = `${leo}\n${sarah}\n${divider}\n${total}\n${divider}`;
 
-
-
-
-
-
-
-//  ADD .TRIM TO ELIMONATE ANY WHITE SPACE.
-
-// -1*
+console.log(result)
 
