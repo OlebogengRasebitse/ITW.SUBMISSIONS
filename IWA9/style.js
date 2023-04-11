@@ -30,10 +30,10 @@ const rent = {
 
 // You can change below however you want
 
- const taxAsDecimal =  parseFloat(tax[913])/100 
+ const taxAsDecimal = parseFloat(tax[913])/100 
  const startingAfterTax = salary - (taxAsDecimal * salary)
  const type = lodging + size
  const balance = (startingAfterTax - expenses.transport - expenses.food - rent.largeApartment).toFixed(2) 
 
-console.log(balance)
+console.log(`Balance: ${balance}`)
 
