@@ -81,49 +81,55 @@ console.log(`Date change: ${copied.date}`)
 console.log(copied.name)
 
 // const Date1 = new Date("16 December 2023").getTime()
-const timestamp = Date.parse(holidays[0].date);
+// const timestamp = Date.parse(holidays[0].date);
 
-console.log(holidays[1].date.getTime)
+// console.log(holidays[1].date.getTime)
 
-const firstHolidayTimestamp = Math.min(
-    Date.parse(holidays[0].date)
-     holidays[1].date.getTime,
-     holidays[2].date.getTime,
-     holidays[3].date.getTime,
-     holidays[4].date.getTime,
-     holidays[5].date.getTime,
-     holidays[6].date.getTime,
-     holidays[7].date.getTime,
-     holidays[8].date.getTime,
-     );
+ const firstHolidayTimestamp = Math.min(
+     Date.parse(holidays[0].date),
+      holidays[1].date.getTime(),
+      holidays[2].date.getTime(),
+      holidays[3].date.getTime(),
+      holidays[4].date.getTime(),
+      holidays[5].date.getTime(),
+      holidays[6].date.getTime(),
+      holidays[7].date.getTime(),
+      holidays[8].date.getTime()
+      );
 
+      let holiday1st = new Date(firstHolidayTimestamp) 
 
-// const firstMonth = firstHolidayTimestamp.getMonth
-// const lastDay = lastHolidayTimestamp.getDate
-// const lastMonth = lastHolidayTimestamp.getMonth
-
-// console.log('{firstDay}/{firstMonth}/{currentYear}')
-// console.log('{lastDay}/{lastMonth}/{currentYear}')
-
-// const randomHoliday = holidays[Math.random]
-// console.log(randomHoliday.date)
-
+    const dateString = "Sun Jan 01 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
+const date = new Date(dateString);
+const day = date.getDate().toString().padStart(2, "0");
+const month = (date.getMonth() + 1).toString().padStart(2, "0");
+const year = date.getFullYear().toString();
+const formattedDate = `${day}/${month}/${year}`;
+console.log(formattedDate); // Output: 01/01/2023
 
 
-// Log the changes made to the copied object
-// console.log(`ID change: false`);
-// console.log(`Name change: ${copied.name}`);
-// console.log(`Date change: ${copied.date.getDate().toString().padStart(2, '0')}/${(copied.date.getMonth() + 1).toString().padStart(2, '0')}/${copied.date.getFullYear()}`);
+const lastHolidayTimestamp = Math.max(
+    Date.parse(holidays[0].date),
+    holidays[1].date.getTime(),
+    holidays[2].date.getTime(),
+    holidays[3].date.getTime(),
+    holidays[4].date.getTime(),
+    holidays[5].date.getTime(),
+    holidays[6].date.getTime(),
+    holidays[7].date.getTime(),
+    holidays[8].date.getTime()
+);
 
-// // Output the first and last holiday dates of the year
-// const holidayDates = Object.values(holidays).map((holiday) => holiday.date.getTime()).sort();
-// const firstHolidayDate = new Date(holidayDates[0]);
-// const lastHolidayDate = new Date(holidayDates[holidayDates.length - 1]);
-// console.log(`First holiday of the year: ${firstHolidayDate.getDate().toString().padStart(2, '0')}/${(firstHolidayDate.getMonth() + 1).toString().padStart(2, '0')}/${firstHolidayDate.getFullYear()}`);
-// console.log(`Last holiday of the year: ${lastHolidayDate.getDate().toString().padStart(2, '0')}/${(lastHolidayDate.getMonth() + 1).toString().padStart(2, '0')}/${lastHolidayDate.getFullYear()}`);
+let holidaylast = new Date(lastHolidayTimestamp)
 
-// // Output a random holiday date
-// const randomHolidayDate = new Date(holidayDates[Math.floor(Math.random() * holidayDates.length)]);
+const lastDateString = "Tue Dec 26 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
+const lastDate = new Date(lastDateString);
+const lastDay = date.getDate().toString().padStart(2, "0")
+const lastMonth = (date.getMonth() +1).toString().padStart(2, "0")
+const lastYear = date.getFullYear().toString();
+const lastFormatedDate = `${lastDay}/${lastMonth}/${lastYear}`;
+console.log(lastMonth)
+
 
 
 
