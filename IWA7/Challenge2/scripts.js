@@ -1,8 +1,8 @@
 const nickname= "Timmy";
-const firstname = "Timothy";
-const tim = nickname || firstname;
+const firstname = null;
+const tim = nickname && `, ${nickname}` || firstname && `, ${firstname}` || "";
 
-console.log(`Good Morning, ${tim}!`);
+console.log(`Good Morning${tim}!`);
 
 // if (nickname) {
 //     console.log(`Good Morning, ${nickname}!`); 
