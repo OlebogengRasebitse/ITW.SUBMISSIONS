@@ -58,17 +58,22 @@ if ('9' in holidays){
     console.log('Holiday Name:', holidays['9'].name);
 } 
 else{
-    console.log('ID 9 not created yet')
+    console.log(`ID ${futureId} not created yet`)
 }
-
-holidays[6].name = 'X-mas';
-holidays[6].date.setHours(0,0);
-
-
-console.log(holidays[6].date)
+const copied = { ...holidays[christmas]}
+copied.name = 'X-mas';
+copied.date.setHours(0, 0 );
 
 
-// isEarlier = copied.date < holidays[6].date
+ console.log(copied)
+
+ const isEarlier = copied.date.getDate() < holidays[6].date.getTime();
+
+console.log(isEarlier)
+
+
+
+
 // console.log('New date is earlier:', isEarlier)
 // if (isEarlier) copied.date = correctDate
 // console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
@@ -109,3 +114,21 @@ console.log(holidays[6].date)
 
 // const randomHoliday = holidays[Math.random]
 // console.log(randomHoliday.date)
+
+
+
+// Log the changes made to the copied object
+console.log(`ID change: false`);
+console.log(`Name change: ${copied.name}`);
+console.log(`Date change: ${copied.date.getDate().toString().padStart(2, '0')}/${(copied.date.getMonth() + 1).toString().padStart(2, '0')}/${copied.date.getFullYear()}`);
+
+// Output the first and last holiday dates of the year
+const holidayDates = Object.values(holidays).map((holiday) => holiday.date.getTime()).sort();
+const firstHolidayDate = new Date(holidayDates[0]);
+const lastHolidayDate = new Date(holidayDates[holidayDates.length - 1]);
+console.log(`First holiday of the year: ${firstHolidayDate.getDate().toString().padStart(2, '0')}/${(firstHolidayDate.getMonth() + 1).toString().padStart(2, '0')}/${firstHolidayDate.getFullYear()}`);
+console.log(`Last holiday of the year: ${lastHolidayDate.getDate().toString().padStart(2, '0')}/${(lastHolidayDate.getMonth() + 1).toString().padStart(2, '0')}/${lastHolidayDate.getFullYear()}`);
+
+// Output a random holiday date
+const randomHolidayDate = new Date(holidayDates[Math.floor(Math.random() * holidayDates.length)]);
+console.log(`Random holiday date: ${

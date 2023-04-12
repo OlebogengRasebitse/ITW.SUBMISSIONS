@@ -16,8 +16,6 @@ const divider = '----------------------------------'
 // const absStr = absOwed.toString();
 
 
-
-
 const owed =  parseFloat(leoBalance) + parseFloat(sarahBalance);
 const positiveOwed = (-1* owed);
 
