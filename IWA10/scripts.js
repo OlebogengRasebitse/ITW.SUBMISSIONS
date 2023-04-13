@@ -124,9 +124,9 @@ let holidaylast = new Date(lastHolidayTimestamp)
 
 const lastDateString = "Tue Dec 26 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
 const lastDate = new Date(lastDateString);
-const lastDay = date.getDate().toString().padStart(2, "0")
-const lastMonth = (date.getMonth() +1).toString().padStart(2, "0")
-const lastYear = date.getFullYear().toString();
+const lastDay = lastDate.getDate().toString().padStart(2, "0")
+const lastMonth = (lastDate.getMonth() +1).toString().padStart(2, "0")
+const lastYear = lastDate.getFullYear().toString();
 const lastFormatedDate = `${lastDay}/${lastMonth}/${lastYear}`;
 console.log(lastFormatedDate)
 
