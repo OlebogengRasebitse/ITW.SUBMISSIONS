@@ -1,13 +1,9 @@
 // script.js
 
-const root1 = document.querySelector('body > section:nth-child(3) > dl')
+//Order 1
 
  const biscuits1 = document.querySelector('body > section:nth-child(3) > dl > div.biscuits > dd')
-
  biscuits1.innerText = 10
-
-//  console.log(biscuits1.innerText)
-
 
  const donuts1 = document.querySelector('body > section:nth-child(3) > dl > div.donuts > dd')
  donuts1.innerText = 13
@@ -15,32 +11,36 @@ const root1 = document.querySelector('body > section:nth-child(3) > dl')
  const pancakes1 = document.querySelector('body > section:nth-child(3) > dl > div.pancakes > dd')
  pancakes1.innerText = 0
 
- const status1 = document.querySelector('')
+ const status1 = document.querySelector('body > section:nth-child(3) > dl > div.status > dd')
 
- const root2 = document.querySelector('')
- const biscuits2 = document.querySelector('')
- const donuts2 = document.querySelector('')
- const pancakes2 = document.querySelector('')
- const status2 = document('')
+ // Set the text of the element to "Pending"
+ status1.innerHTML = 'Pending'
 
- const root3 = document.(order3)
-// const biscuits3 = document(biscuits)
-// const donuts3 = document(donuts)
-// const pancakes3 = document(pancakes)
-// const status3 = document(status)
+ //Order 2
+  const biscuits2 = document.querySelector('body > section:nth-child(4) > dl > div.biscuits > dd')
+  biscuits2.innerText = 5
 
-// biscuits1 = root1.biscuits,
-// donuts1 = root1.donuts,
-// pancakes1 = root1.pancakes,
-// status1 = root1.status ? Delivered : Pending
+  const donuts2 = document.querySelector('body > section:nth-child(4) > dl > div.donuts > dd')
+  donuts2.innerText = 0
 
-// biscuits2= root2.biscuits,
-// donuts2 = root2.donuts,
-// pancakes2 = root2.pancakes,
-// status2 = root2.status ? Delivered : Pending
+  const pancakes2 = document.querySelector('body > section:nth-child(4) > dl > div.pancakes > dd')
+  pancakes2.innerText = 2
 
-// biscuits3= root3.biscuits,
-// donuts3 = root3.donuts,
-// pancakes3 = root3.pancakes,
-// status3 = root3.status ? Delivered : Pending
+  const status2 = document.querySelector('body > section:nth-child(4) > dl > div.status > dd')
+  status2.innerHTML = 'Pending'
+
+//Oder3
+  const biscuits3 = document.querySelector('body > section:nth-child(5) > dl > div.biscuits > dd')
+  biscuits3.innerText = 12
+
+  const donuts3 = document.querySelector('body > section:nth-child(5) > dl > div.donuts > dd')
+  donuts3.innerText = 11
+
+  const pancakes3 = document.querySelector('body > section:nth-child(5) > dl > div.pancakes > dd')
+  pancakes3.innerText = 15
+
+  const status3 = document.querySelector('body > section:nth-child(5) > dl > div.status > dd')
+  status3.innerHTML = 'Delivered'
+
+ 
 
