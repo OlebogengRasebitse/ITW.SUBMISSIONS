@@ -54,17 +54,7 @@ ocument.querySelector("#book2 .reserve").disabled = true;
  document.querySelector("#book2 .checkin").disabled = true;
 
 
-new Date() would return the current date and time object in the format of Day Month Year Hour:Minute:Second Timezone.
 
-Here's an example of how you can use this code to get the current date and time in JavaScript:
-
-javascript
-Copy code
-const currentDate = new Date();
-console.log(currentDate);
-This will output the current date and time object in the console. You can also format the output using various methods available in JavaScript's Date object.
-
-14 April 2023
 
 
 //Buttons 1
