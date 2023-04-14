@@ -29,24 +29,31 @@ const STATUS_MAP = {
 
 // Edit below line 
 
-const status1 = document.querySelector ('#book1 .reserve')
+const status1 = document.querySelector ('#book1 .status')
 
-console.log(status1)
-const reserve = selector(reserve)
-const checkout = selector(checkout)
-const checkin = selector(checkin)
 
-const status2 = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
+ const reserve1 = document.querySelector('#book1 .reserve')
 
-status = selector(status)
-reserve = selector(reserve)
-checkout = selector(checkout)
-checkin = selector(checkin)
 
-// checkin.0.color = none
+ const checkout1 = document.querySelector('#book1 .checkout')
+
+ const checkin1 = document.querySelector('#book1 .checkin')
+
+ const status2 = document.querySelector('#book2 .status')
+
+ const reserve2 = document.querySelector('#book2 .reserve')
+
+const checkout2 = document.querySelector('#book2 .checkout')
+ const checkin2 = document.querySelector('#book2 .checkin')
+
+const status3 = document.querySelector('#book3 .status')
+const reserve3 = document.querySelector('#book3 .reserve')
+const checkout3 = document.querySelector('#book3 .checkout')
+const checkin3 = document.querySelector('#book3 .checkin')
+
+console.log(checkin3.innerText)
+
+checkin1.color = none
 // status1.0.style.color = STATUS_MAP.status.color
 // reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
 // checkout. 0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
