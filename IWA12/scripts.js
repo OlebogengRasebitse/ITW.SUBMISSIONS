@@ -48,3 +48,62 @@ statusE.forEach((statusE, index) => {
   checkinButton[index].style.filter = 'grayscale(100%)';
 });
 
+
+ocument.querySelector("#book2 .reserve").disabled = true;
+ document.querySelector("#book2 .checkout").disabled =  false ;
+ document.querySelector("#book2 .checkin").disabled = true;
+
+
+new Date() would return the current date and time object in the format of Day Month Year Hour:Minute:Second Timezone.
+
+Here's an example of how you can use this code to get the current date and time in JavaScript:
+
+javascript
+Copy code
+const currentDate = new Date();
+console.log(currentDate);
+This will output the current date and time object in the console. You can also format the output using various methods available in JavaScript's Date object.
+
+14 April 2023
+
+
+//Buttons 1
+// const status1 = document.querySelector ('#book1 .status')
+//  const reserve1 = document.querySelector('#book1 .reserve')
+//  const checkout1 = document.querySelector('#book1 .checkout')
+//  const checkin1 = document.querySelector('#book1 .checkin')
+
+
+// //Buttons 2
+//  const status2 = document.querySelector('#book2 .status')
+//  const reserve2 = document.querySelector('#book2 .reserve')
+// const checkout2 = document.querySelector('#book2 .checkout')
+//  const checkin2 = document.querySelector('#book2 .checkin')
+
+//  //Buttons 3
+// const status3 = document.querySelector('#book3 .status')
+// const reserve3 = document.querySelector('#book3 .reserve')
+// const checkout3 = document.querySelector('#book3 .checkout')
+// const checkin3 = document.querySelector('#book3 .checkin')
+
+// //Overdue
+//  checkin1.style.color = '';
+//  status1.style.color = 'red';
+//  document.querySelector("#book1 .reserve").disabled = true
+//  document.querySelector("#book1 .checkout").disabled = true
+//  document.querySelector("#book1 .checkin").disabled = false
+
+// //Reserved
+//  checkin2.style.color = '';
+//  status2.style.color = 'blue'
+//  document.querySelector("#book2 .reserve").disabled = true;
+//  document.querySelector("#book2 .checkout").disabled =  false ;
+//  document.querySelector("#book2 .checkin").disabled = true;
+
+// //Shelf
+//  checkin3.style.color = '';
+//  status3.style.color = 'green';
+//  document.querySelector("#book3 .reserve").disabled = false;
+//  document.querySelector("#book3 .checkout").disabled = false;
+//  document.querySelector("#book3 .checkin").disabled = true;
+
