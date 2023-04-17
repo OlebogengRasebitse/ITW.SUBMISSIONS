@@ -4,7 +4,9 @@ let calculated = '1'
 
 // Only allowed to change below
 
-    
+//Arrow Functions.
+//When doing a single return, I can remove the curly brackets & "return" keyword.
+
 const logCalc = () => {
     const isString = typeof calculated == Number
     const calculatedAsNumber = isString ? calculated : parseInt(calculated) //Using the Tenary method. Check if calculated is a string :if not use parseInt to convert the string into a number.
