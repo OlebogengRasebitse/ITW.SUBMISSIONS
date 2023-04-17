@@ -37,21 +37,21 @@ const checkinButton = document.querySelectorAll('.checkin');
 
 //Update each book's elements based on its status
 statusE.forEach((statusE, index) => {
-  const status = statusE.textContent;
-  statusE.style.color = STATUS_MAP[status].color;
-  reserveButton[index].disabled = !STATUS_MAP[status].canReserve;
-  checkoutButton[index].disabled = !STATUS_MAP[status].canCheckout;
-  checkinButton[index].disabled = !STATUS_MAP[status].canCheckIn;
+    const status = statusE.textContent;
+    statusE.style.color = STATUS_MAP[status].color;
+    reserveButton[index].disabled = !STATUS_MAP[status].canReserve;
+    checkoutButton[index].disabled = !STATUS_MAP[status].canCheckout;
+    checkinButton[index].disabled = !STATUS_MAP[status].canCheckIn;
 
-  reserveButton[index].style.filter = 'grayscale(100%)';
-  checkoutButton[index].style.filter = 'grayscale(100%)';
-  checkinButton[index].style.filter = 'grayscale(100%)';
+    reserveButton[index].style.filter = 'grayscale(100%)';
+    checkoutButton[index].style.filter = 'grayscale(100%)';
+    checkinButton[index].style.filter = 'grayscale(100%)';
 });
 
 
-ocument.querySelector("#book2 .reserve").disabled = true;
- document.querySelector("#book2 .checkout").disabled =  false ;
- document.querySelector("#book2 .checkin").disabled = true;
+document.querySelector("#book2 .reserve").disabled = true;
+document.querySelector("#book2 .checkout").disabled = false;
+document.querySelector("#book2 .checkin").disabled = true;
 
 
 
