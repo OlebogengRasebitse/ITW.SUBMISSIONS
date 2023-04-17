@@ -51,55 +51,52 @@ const holidays = {
 const christmas = 6
 const futureId = 9
 
-
-
 // Do not change code above this comment
-if ('9' in holidays){
-    console.log('Holiday Name:', holidays['9'].name);
-} 
-else{
+
+//Check if an item has been assigned to the 9 key.
+if (9 in holidays) {
+    console.log('Holiday Name:', holidays.futureId.name);
+}
+else {
     console.log(`ID ${futureId} not created yet`)
 }
-const copied = { ...holidays[christmas]}
-copied.name = 'X-mas';
-copied.date.setHours(0 , 0 );
 
 
+//Change time and name.
+// const copied = { ...holidays[christmas]}
+// copied.name = 'X-mas';
+// copied.date.setHours(0 , 0 );
 
- console.log(copied)
+holidays[6].name = 'Xmas';
+holidays[6].date.setHours(0, 0);
 
- const isEarlier = copied.date.getDate() < holidays[6].date.getTime();
-
-
+// check whether the new date is earlier than the current date
+const isEarlier = holidays[6].date.getTime < Date.now;
 console.log(`New date is earlier:${isEarlier}`)
 
-// if (isEarlier) copied.date = correctDate
-//  console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
 
 console.log(`ID change: False`)
-console.log(`Date change: ${copied.date}`)
-console.log(copied.name)
+console.log(`Date change: ${holidays[6].date}`)
+console.log(`Name Change: ${holidays[6].name}`)
 
-// const Date1 = new Date("16 December 2023").getTime()
-// const timestamp = Date.parse(holidays[0].date);
 
 // console.log(holidays[1].date.getTime)
 
- const firstHolidayTimestamp = Math.min(
-     Date.parse(holidays[0].date),
-      holidays[1].date.getTime(),
-      holidays[2].date.getTime(),
-      holidays[3].date.getTime(),
-      holidays[4].date.getTime(),
-      holidays[5].date.getTime(),
-      holidays[6].date.getTime(),
-      holidays[7].date.getTime(),
-      holidays[8].date.getTime()
-      );
+const firstHolidayTimestamp = Math.min(
+    Date.parse(holidays[0].date),
+    holidays[1].date.getTime(),
+    holidays[2].date.getTime(),
+    holidays[3].date.getTime(),
+    holidays[4].date.getTime(),
+    holidays[5].date.getTime(),
+    holidays[6].date.getTime(),
+    holidays[7].date.getTime(),
+    holidays[8].date.getTime()
+);
 
-      let holiday1st = new Date(firstHolidayTimestamp) 
+let holiday1st = new Date(firstHolidayTimestamp)
 
-    const dateString = "Sun Jan 01 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
+const dateString = "Sun Jan 01 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
 const date = new Date(dateString);
 const day = date.getDate().toString().padStart(2, "0");
 const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -125,10 +122,10 @@ let holidaylast = new Date(lastHolidayTimestamp)
 const lastDateString = "Tue Dec 26 2023 00:00:00 GMT+0200 (South Africa Standard Time)";
 const lastDate = new Date(lastDateString);
 const lastDay = lastDate.getDate().toString().padStart(2, "0")
-const lastMonth = (lastDate.getMonth() +1).toString().padStart(2, "0")
+const lastMonth = (lastDate.getMonth() + 1).toString().padStart(2, "0")
 const lastYear = lastDate.getFullYear().toString();
 const lastFormatedDate = `${lastDay}/${lastMonth}/${lastYear}`;
-console.log(lastFormatedDate)
+console.log(lastFormatedDate)//Output: 26/12/2023
 
 
 
