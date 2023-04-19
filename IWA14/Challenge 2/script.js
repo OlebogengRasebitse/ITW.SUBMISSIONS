@@ -1,5 +1,7 @@
 // script.js
 
+//This code should log these two values to the console: 48 & 12
+
 //function that adds two numbers 
 const add = (a, b) => { 
    return a + b;
@@ -14,14 +16,14 @@ const add = (a, b) => {
  	const added = this.add(this.internal.a, this.internal.b);
     const mutiplication = this.multiply(added,  this.internal.c)
      console.log(mutiplication)
-    
+    //this refers to an object called.
 	}
 
 // Not allowed to change below this
 
 const example1 = {
 	internal: {//Object 
-		a: 2,
+		a: 2, //a, b, c, = Properties.
 		b: 4,
 		c: 8,
 	},

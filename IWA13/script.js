@@ -13,6 +13,8 @@ const logCalc = () => {
     calculated = calculatedAsNumber + 1  
 }
 
+
+
 //Call function
 const calcUser = () => {  //Checks the value of user and state.
   logCalc();  
@@ -20,6 +22,7 @@ const calcUser = () => {  //Checks the value of user and state.
   if (calculated > 2) state = 'requesting'
   if (calculated > 3) state = 'idle'
 }
+
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
