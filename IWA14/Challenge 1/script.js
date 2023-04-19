@@ -7,12 +7,17 @@
 // Hello, John (35). I love coding!
 // Hello, John (35). I love coding!
 
+const logTwice = (logHobby) => {
+    console.log(logHobby)
+    console.log(logHobby)
+  }//When logValue is called, it logs the value twice.
+  
 
  function myHobby(){
-  console.log(`Hello, ${firstName} ${age}. I love ${hobby}!`)
+  logTwice(`Hello, ${firstName} ${age}. I love ${hobby}!`)
  }
 
-myHobby()
-myHobby()
+//My hobby calls logTwice and it passes the a new value in a form of a string.
 
+myHobby()
 

@@ -8,14 +8,14 @@ let calculated = '1'
 //When doing a single return, I can remove the curly brackets & "return" keyword.
 
 const logCalc = () => {
-    const isString = typeof calculated == Number
-    const calculatedAsNumber = isString ? calculated : parseInt(calculated) //Using the Tenary method. Check if calculated is a string :if not use parseInt to convert the string into a number.
-    calculated = calculatedAsNumber + 1 
+    const isString = typeof calculated === 'string'
+    const calculatedAsNumber = isString ? parseInt(calculated) : calculated  //Using the Tenary method. Check if calculated is a string :if not use parseInt to convert the string into a number.
+    calculated = calculatedAsNumber + 1  
 }
 
 //Call function
-const calcUser = () => {
-  logCalc(); //Use parenthesis to call the function 
+const calcUser = () => {  //Checks the value of user and state.
+  logCalc();  
   if (calculated > 2) user = 'John'
   if (calculated > 2) state = 'requesting'
   if (calculated > 3) state = 'idle'
@@ -27,10 +27,9 @@ const checkUser = () => {
     calculated = '4'
 	}
 }
- 
- 
+  
 // Only allowed to change code above
-calcUser()
+calcUser() //Use parenthesis to call the function
 checkUser()
 
 
