@@ -91,4 +91,18 @@ const displayAthleteData = (athlete) => {
 	const h2 = document.createElement('h2');
 	h2.textContent = `Athlete: ${firstName} ${surname}`;
 
-	
+	const dl = document.createElement('dl');
+	dl.innerHTML = `
+	  <dt>Full Name</dt>
+	  <dd>${firstName} ${surname}</dd>
+	  <dt>Total Races</dt>
+	  <dd>${totalRaces}</dd>
+	  <dt>Event Date (Latest)</dt>
+	  <dd>${formatDate(latestRace.date)}</dd>
+	  <dt>Total Time (Latest)</dt>
+	  <dd>${formatTime(latestRace.time.reduce((a, b) => a + b))}</dd>
+	`;
+
+	section.appendChild(h2);
+	section.appendChild(dl);
+}
