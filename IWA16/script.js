@@ -83,8 +83,6 @@ const data = {
 	const formattedDate = `${latestRaceDate.getDate()} ${MONTHS[latestRaceDate.getMonth()]} ${latestRaceDate.getFullYear()}`; //dd mm yyyy
 	const totalRaceCount = races.length; //2 & 4  
 	const totalTime = `${String(Math.floor((time1 + time2 + time3 + time4) / 60)).padStart(2, '0')}:${String((time1 + time2 + time3 + time4) % 60).padStart(2, '0')}`; //hh:mm
-
-console.log(totalTime)
   
 	// Create the HTML elements
 	const section = document.querySelector(`[data-athlete="${id}"]`);
