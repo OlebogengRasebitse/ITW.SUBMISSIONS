@@ -65,19 +65,26 @@ const data = {
 
 // Only edit below this comment
 // Create HTML for each athlete
- Object.values(data.response.data).forEach((athlete) => {
- 	const { firstName, surname, id, races } = athlete; //DESTRUCTURING.Use what we only need.
+//  Object.values(data.response.data).forEach((athlete) => {
+//  	const { firstName, surname, id, races } = athlete; //DESTRUCTURING.Use what we only need.
+
+	// convert the values of the data.response.data object into an array
+
+	for (const athleteKey in data.response.data) { //Repeatedly go through dat.response properties.
+		const athlete = data.response.data[athleteKey]; //Retrieves the value of current property
+		const { firstName, surname, id, races } = athlete; //DESTRUCTURING.Use what we only need.
+
 
 
 	// Get the latest race
-	const [latestRace] = races.slice(-1);
-	const [time1, time2, time3, time4] = latestRace.time;
-	const latestRaceDate = new Date(latestRace.date);
-	const formattedDate = `${latestRaceDate.getDate()} ${MONTHS[latestRaceDate.getMonth()]} ${latestRaceDate.getFullYear()}`;
-	const totalRaceCount = races.length;
-	const totalTime = `${String(Math.floor((time1 + time2 + time3 + time4) / 60)).padStart(2, '0')}:${String((time1 + time2 + time3 + time4) % 60).padStart(2, '0')}`;
+	const [latestRace] = races.slice(-1);//New Array array is sorted in descending order by date.Use slice to get the last race
+	const [time1, time2, time3, time4] = latestRace.time;// extracts these four values into separate variables named using RESTRUCTURING
+	const latestRaceDate = new Date(latestRace.date);//creates a new Date object
+	const formattedDate = `${latestRaceDate.getDate()} ${MONTHS[latestRaceDate.getMonth()]} ${latestRaceDate.getFullYear()}`; //dd mm yyyy
+	const totalRaceCount = races.length; //2 & 4  
+	const totalTime = `${String(Math.floor((time1 + time2 + time3 + time4) / 60)).padStart(2, '0')}:${String((time1 + time2 + time3 + time4) % 60).padStart(2, '0')}`; //hh:mm
 
-
+console.log(totalTime)
   
 	// Create the HTML elements
 	const section = document.querySelector(`[data-athlete="${id}"]`);
@@ -120,4 +127,4 @@ const data = {
 	section.appendChild(infoRaces);
 	section.appendChild(infoTotalA);
 	section.appendChild(infoTotal);
-  });
+  };
