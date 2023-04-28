@@ -1,3 +1,7 @@
+
+
+import {createOrderHtml, html, updateDraggingHtml, moveToColumn, } from  './view.js'
+import { createOrderData, updateDragging} from './data.js'
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -7,60 +11,59 @@
  * active dragging column is set in the `state` object in "data.js" and the HTML
  * is updated to reflect the new column.
  *
- * @param {Event} event 
+ * @param {Event} event
  */
 const handleDragOver = (event) => {
     event.preventDefault();
     const path = event.path || event.composedPath()
     let column = null
-
     for (const element of path) {
-        const { area } = element.dataset
+        const { area } 
+        
+        = element.dataset
         if (area) {
             column = area
             break;
         }
     }
-
     if (!column) return
     updateDragging({ over: column })
     updateDraggingHtml({ over: column })
 }
-
-
-
+// actions for when button is clicked
 const handleDragStart = (event) => {}
 const handleDragEnd = (event) => {}
-const handleHelpToggle = (event) => {}
-const handleAddToggle = (event) => {}
+const handleHelpToggle = (event)  => {
+    html.help.overlay.style.display = "block"
+}
+function handleHelpCancel(){
+    html.help.overlay.style.display = "none"
+    html.other.add.focus()
+}
+const handleAddToggle = () => {
+    html.add.overlay.style.display = 'block'
+}
+const handleAddCancel = () => {
+    html.add.overlay.style.display = 'none'
+    html.other.add.focus()
+}
 const handleAddSubmit = (event) => {}
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {}
 const handleDelete = (event) => {}
-
-html.add.cancel.addEventListener('click', handleAddToggle)
+html.add.cancel.addEventListener('click', handleAddCancel)
 html.other.add.addEventListener('click', handleAddToggle)
 html.add.form.addEventListener('submit', handleAddSubmit)
-
 html.other.grid.addEventListener('click', handleEditToggle)
 html.edit.cancel.addEventListener('click', handleEditToggle)
 html.edit.form.addEventListener('submit', handleEditSubmit)
 html.edit.delete.addEventListener('click', handleDelete)
-
-html.help.cancel.addEventListener('click', handleHelpToggle)
+html.help.cancel.addEventListener('click', handleHelpCancel)
 html.other.help.addEventListener('click', handleHelpToggle)
-
 for (const htmlColumn of Object.values(html.columns)) {
     htmlColumn.addEventListener('dragstart', handleDragStart)
     htmlColumn.addEventListener('dragend', handleDragEnd)
 }
-
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver)
 }
-
-
-//IMPORT FILE DATA.JS & VIEW.JS
-
-import { TABLES, COLUMNS, state } from './data';
-import { createOrderHtml, createTableOptionsHtml, html, updateDraggingHtml, moveToColumn } from './view';

@@ -13,22 +13,22 @@
     <header class="actions">
       <h1 class="sr-only">Kitchen Express</h1>
       <div class="actions__inner">
-        <button class="button button_primary" data-add>Add Order</button>
+        <button class="button button_primary" data-add>Add Order</button>  <!-----Adds a focus style to the “Add Order” button when the user presses the Tab key.---->
       </div>
     </header>
 
-    <dialog class="overlay" data-help-overlay>
+    <dialog class="overlay" data-help-overlay>  <!------Section 2: Handles the “?” button click event, which opens the “Help” overlay.----->
       <h2 class="overlay__title">Help</h2>
       <p><strong>To use the app, you can start by adding a new order by clicking the "add order" button.</strong></p>
       <p>You can view and update orders by selecting them directly from the list. Inside the order, you can manually change information associated with an order or update its status. However, note that you can quickly change the status of an order by drag it between the three different columns with your mouse.</p>
       <div class="overlay__row">
-        <button class="button" type="button" data-help-cancel>Close</button>
+        <button class="button" type="button" data-help-cancel>Close</button> <!-----Section 3: Handles the “Close” button click event, which closes the currently active overlay.-->
       </div>
     </dialog>
 
     <dialog class="overlay" data-add-overlay>
       <div class="overlay__top">
-        <h2 class="overlay__title">Add Order</h2>
+        <h2 class="overlay__title">Add Order</h2> <!--Section 4: Handles the “Add Order” button click event, which opens the “Add Order” overlay.-->
       </div>
 
       <form class="overlay__form" data-add-form id="add-form">
@@ -44,15 +44,15 @@
 
       </form>
       <div class="overlay__row">
-        <button class="button" type="button" data-add-cancel>Cancel</button>
-        <button class="button button_primary" type="submit" form="add-form">Add</button>
+        <button class="button" type="button" data-add-cancel>Cancel</button> <!---Section 5: Handles the “Cancel” button click event in the “Add Order” overlay, which closes the overlay without adding a new order.-->
+        <button class="button button_primary" type="submit" form="add-form">Add</button>   <!--Section 6: Handles the “Add” button click event in the “Add Order” overlay, which adds a new order to the “Ordered” column.-->
       </div>
     </dialog>
 
     <dialog class="overlay" data-edit-overlay>
       <div class="overlay__top">
-        <h2 class="overlay__title">Edit Order</h2>
-        <button class="overlay__delete" data-edit-delete>Delete</button>
+        <h2 class="overlay__title">Edit Order</h2> <!--Section 7: Handles the “Edit” button click event on an order, which opens the “Edit Order” overlay.-->
+        <button class="overlay__delete" data-edit-delete>Delete</button> <!--Section 8: Handles the “Delete” button click event in the “Edit Order” overlay, which removes the order entirely.-->
       </div>
 
       <form class="overlay__form" data-edit-form id="edit-form">
@@ -80,10 +80,12 @@
 
       </form>
       <div class="overlay__row">
-        <button class="button" type="button" data-edit-cancel>Cancel</button>
-        <button class="button button_primary" type="submit" form="edit-form">Update</button>
+        <button class="button" type="button" data-edit-cancel>Cancel</button>  <!--Section 9: Handles the “Cancel” button click event in the “Edit Order” overlay, which closes the overlay without applying changes to the order.-->
+        <button class="button button_primary" type="submit" form="edit-form">Update</button>  <!--Section 10: Handles the “Update” button click event in the “Edit Order” overlay, which closes the overlay and applies changes to the order.-->
       </div>
     </dialog>
+
+    <!--Section 11: Handles the “Change” event in the “Edit Order” overlay, which updates the status of the order.-->
 
     <h2 class="sr-only">Orders</h2>
 

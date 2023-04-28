@@ -71,7 +71,7 @@ export const createTableOptionsHtml = () => {
  * Note that the "column" and "area" properties created as empty and then added
  * dynamically by a loop that runs over the COLUMNS array.
  */
-export const html = {
+export const html = {  //html object
     columns: {},
     area: {},
     add: {
@@ -104,9 +104,11 @@ export const html = {
 }
 
 for (const columnName of COLUMNS) {
-    html.columns[columnName] = document.querySelector(`[data-column="${columnName}"]`)
+    html.columns[columnName] = document.querySelector(`[data-column="${columnName}"]`) //ORDERED PREPARED SERVED 
     html.area[columnName] = document.querySelector(`[data-area="${columnName}"]`)
+    console.log(area.columnName)
 }
+
 
 /**
  * Maps over all columns in the HTML and removes any dragging hover effects
@@ -116,7 +118,7 @@ for (const columnName of COLUMNS) {
  *
  * @param {object} newDragging 
  */
-export const updateDraggingHtml = ({newDragging}) => {
+export const updateDraggingHtml = (newDragging) => {
     const { over = state.dragging.over } = newDragging
 
     for (const columnName of COLUMNS) {
@@ -153,3 +155,4 @@ html.other.add.focus()
 
 html.add.table.appendChild(createTableOptionsHtml())
 html.edit.table.appendChild(createTableOptionsHtml())
+console.log()

@@ -60,6 +60,7 @@ const createUniqueId = () => {
     const timestamp = new Date().getTime()
     return `${random1}-${timestamp}-${random2}`
 }
+console.log(createUniqueId )
 
 /**
  * A factory function that creates an order object literal representing an
