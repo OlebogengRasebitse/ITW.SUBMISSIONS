@@ -33,6 +33,7 @@ const handleDragOver = (event) => {
 // actions for when button is clicked
 const handleDragStart = (event) => {}
 const handleDragEnd = (event) => {}
+
 const handleHelpToggle = (event)  => {
     html.help.overlay.style.display = "block"
 }
@@ -47,7 +48,33 @@ const handleAddCancel = () => {
     html.add.overlay.style.display = 'none'
     html.other.add.focus()
 }
-const handleAddSubmit = (event) => {}
+
+
+    //SUBMIT AND ADD ORDER.
+
+    const addDataForm = html.add.form
+    const displayElement = document.querySelector('[data-column="ordered"]')
+
+const handleAddSubmit = (event) => {
+    event.preventDefault();
+
+    const order = {
+        title: html.add.title.value,
+        table : html.add.table.value, 
+    }
+
+    let orderData = createOrderData(order)
+
+    const orderDetails = createOrderHtml(orderData)
+    
+    const customerOrder = html.other.grid.querySelector('[data-column="ordered"]')
+   
+    customerOrder.appendChild(orderDetails);
+    html.add.form.reset(); 
+  html.add.overlay.style.display = 'none';
+};
+html.add.form.addEventListener('submit', handleAddSubmit)
+
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {}
 const handleDelete = (event) => {}
@@ -67,3 +94,4 @@ for (const htmlColumn of Object.values(html.columns)) {
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver)
 }
+

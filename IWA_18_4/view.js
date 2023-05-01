@@ -20,7 +20,6 @@ export const createOrderHtml = (order) => {
 
     const hours = created.getHours().toString().padStart(2, '0')
     const minutes = created.getMinutes().toString().padStart(2, '0')
-
     element.innerHTML = /* html */ `
         <div class="order__title" data-order-title>${title}</div>
         
@@ -61,6 +60,7 @@ export const createTableOptionsHtml = () => {
 
     return fragment
 }
+
 
 /**
  * An object literal that contains references to all the HTML elements
@@ -103,10 +103,10 @@ export const html = {  //html object
     }
 }
 
+
 for (const columnName of COLUMNS) {
     html.columns[columnName] = document.querySelector(`[data-column="${columnName}"]`) //ORDERED PREPARED SERVED 
     html.area[columnName] = document.querySelector(`[data-area="${columnName}"]`)
-    console.log(area.columnName)
 }
 
 
