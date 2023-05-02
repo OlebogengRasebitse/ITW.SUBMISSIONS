@@ -1,70 +1,81 @@
-matches = books
-page = 1;
+const matches = books;
+const page = 1;
 
-if (!books && !Array.isArray(books)) throw new Error('Source required') 
-if (!range && range.length < 2) throw new Error('Range must be an array with two numbers')
+if (!books || !Array.isArray(books)) throw new Error('Source required');
+if (!range && range.length < 2) throw new Error('Range must be an array with two numbers');
 
-day = {
+const day = {
     dark: '10, 10, 20',
     light: '255, 255, 255',
-}
+};
 
-night = {
+ const night = {
     dark: '255, 255, 255',
     light: '10, 10, 20',
-}
+};
 
-fragment = document.createDocumentFragment()
-const extracted = books.slice(0, 36)
+const fragment = document.createDocumentFragment();
+const extracted = matches.slice(0, 36);
 
-for ({ author, image, title, id }; extracted; i++) {
+for (let i = 0; i < extracted,length; i++) { 
+    const {author, image, title, id } =  extracted[i];
+
     const preview = createPreview({
         author,
         id,
         image,
         title
-    })
+    });
 
-    fragment.appendChild(preview)
+    fragment.appendChild(preview);
 }
 
-data-list-items.appendChild(fragment)
+data-list-items.appendChild(fragment);
 
-genres = document.createDocumentFragment()
-element = document.createElement('option')
-element.value = 'any'
-element = 'All Genres'
+const genres = document.createDocumentFragment();
+let element = document.createElement('option');
+element = 'All Genres';
+ element.value = 'any';
 genres.appendChild(element)
 
-for ([id, name]; Object.entries(genres); i++) {
-    document.createElement('option')
-    element.value = value
-    element.innerText = text
-    genres.appendChild(element)
+for (const[id, name] of Object.entries(genres)) {  //changed name to title.
+    element = document.createElement('option');
+    element.value = id;
+    element.innerText = title;
+    genres.appendChild(element);
 }
 
-data-search-genres.appendChild(genres)
+data-search-genres.appendChild(authors);
 
-authors = document.createDocumentFragment()
-element = document.createElement('option')
-element.value = 'any'
-element.innerText = 'All Authors'
-authors.appendChild(element)
+const theme = window.matchMedia.document.createDocumentFragment();
+element = document.createElement('option');
+element.value = 'any';
+element.innerText = 'All Authors';
+authors.appendChild(element);
 
-for ([id, name];Object.entries(authors); id++) {
-    document.createElement('option')
-    element.value = value
-    element = text
-    authors.appendChild(element)
+for (const[id, name] of Object.entries(authors)) {
+   element = document.createElement('option');
+    element.value = any;
+    element,innerText = name;
+    authors.appendChild(element);
 }
 
-data-search-authors.appendChild(authors)
 
-data-settings-theme.value === window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
-v = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches? 'night' | 'day'
+data-search-genres.appendChild(genres);
+
+const authors = document.createDocumentFragment();
+
+//Dark/ light mode 
+const theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
+ setProperty('')
+
 
 documentElement.style.setProperty('--color-dark', css[v].dark);
 documentElement.style.setProperty('--color-light', css[v].light);
+
+
+
+
 data-list-button = "Show more (books.length - BOOKS_PER_PAGE)"
 
 data-list-button.disabled = !(matches.length - [page * BOOKS_PER_PAGE] > 0)
@@ -90,7 +101,7 @@ data-header-search.click() {
     data-search-title.focus();
 }
 
-data-search-form.click(filters) {
+ data-search-form.click(filters) {
     preventDefault()
     const formData = new FormData(event.target)
     const filters = Object.fromEntries(formData)
@@ -114,8 +125,8 @@ data-search-form.click(filters) {
     
 
     data-list-items.innerHTML = ''
-    const fragment = document.createDocumentFragment()
-    const extracted = source.slice(range[0], range[1])
+     fragment = document.createDocumentFragment()
+     extracted = source.slice(range[0], range[1])
 
     for ({ author, image, title, id }; extracted; i++) {
         const { author: authorId, id, image, title } = props
@@ -151,7 +162,7 @@ data-search-form.click(filters) {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     data-search-overlay.open = false
-}
+
 
 data-settings-overlay.submit; {
     preventDefault()
@@ -159,7 +170,7 @@ data-settings-overlay.submit; {
     const result = Object.fromEntries(formData)
     document.documentElement.style.setProperty('--color-dark', css[result.theme].dark);
     document.documentElement.style.setProperty('--color-light', css[result.theme].light);
-    data-settings-overlay).open === false
+    data-settings-overlay.open === false
 }
 
 data-list-items.click() {
@@ -174,6 +185,7 @@ data-list-items.click() {
             if (singleBook.id === id) active = singleBook
         } 
     }
+}
     
     if !active return
     data-list-active.open === true

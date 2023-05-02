@@ -1,7 +1,7 @@
 
 
-import {createOrderHtml, html, updateDraggingHtml, moveToColumn, } from  './view.js'
-import { createOrderData, updateDragging} from './data.js'
+import { createOrderHtml, html, updateDraggingHtml, moveToColumn, } from './view.js'
+import { createOrderData, updateDragging } from './data.js'
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -15,12 +15,12 @@ import { createOrderData, updateDragging} from './data.js'
  */
 const handleDragOver = (event) => {
     event.preventDefault();
-    const path = event.path || event.composedPath()
+    const path = event.path || event.composedPath() // determine which column the user is dragging over.
     let column = null
     for (const element of path) {
-        const { area } 
-        
-        = element.dataset
+        const { area } //used to determine if the current element is a column.
+
+            = element.dataset
         if (area) {
             column = area
             break;
@@ -30,14 +30,17 @@ const handleDragOver = (event) => {
     updateDragging({ over: column })
     updateDraggingHtml({ over: column })
 }
-// actions for when button is clicked
-const handleDragStart = (event) => {}
-const handleDragEnd = (event) => {}
 
-const handleHelpToggle = (event)  => {
+// actions for when button is clicked
+const handleDragStart = (event) => { 
+  
+}
+const handleDragEnd = (event) => { }
+
+const handleHelpToggle = (event) => {
     html.help.overlay.style.display = "block"
 }
-function handleHelpCancel(){
+function handleHelpCancel() {
     html.help.overlay.style.display = "none"
     html.other.add.focus()
 }
@@ -50,34 +53,34 @@ const handleAddCancel = () => {
 }
 
 
-    //SUBMIT AND ADD ORDER.
+//SUBMIT AND ADD ORDER.
 
-    const addDataForm = html.add.form
-    const displayElement = document.querySelector('[data-column="ordered"]')
+const addDataForm = html.add.form
+const displayElement = document.querySelector('[data-column="ordered"]')
 
 const handleAddSubmit = (event) => {
     event.preventDefault();
-
     const order = {
         title: html.add.title.value,
-        table : html.add.table.value, 
+        table: html.add.table.value,
     }
 
     let orderData = createOrderData(order)
 
     const orderDetails = createOrderHtml(orderData)
-    
+
     const customerOrder = html.other.grid.querySelector('[data-column="ordered"]')
-   
+
     customerOrder.appendChild(orderDetails);
-    html.add.form.reset(); 
-  html.add.overlay.style.display = 'none';
+    html.add.form.reset();
+    html.add.overlay.style.display = 'none';
 };
 html.add.form.addEventListener('submit', handleAddSubmit)
 
-const handleEditToggle = (event) => {}
-const handleEditSubmit = (event) => {}
-const handleDelete = (event) => {}
+
+const handleEditToggle = (event) => { }
+const handleEditSubmit = (event) => { }
+const handleDelete = (event) => { }
 html.add.cancel.addEventListener('click', handleAddCancel)
 html.other.add.addEventListener('click', handleAddToggle)
 html.add.form.addEventListener('submit', handleAddSubmit)
