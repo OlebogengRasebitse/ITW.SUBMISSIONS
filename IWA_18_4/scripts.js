@@ -27,23 +27,31 @@ const handleDragOver = (event) => {
         }
     }
     if (!column) return
-    updateDragging({ over: column })
-    updateDraggingHtml({ over: column })
+    updateDragging({ over: column })//updates the state of the item being dragged
+    updateDraggingHtml({ over: column }) //updates the visual appearance of the item being dragged
 }
 
+
+
 // actions for when button is clicked
+
+
 const handleDragStart = (event) => { 
   
-}
-const handleDragEnd = (event) => { }
+}//called when a drag operation is started 
+const handleDragEnd = (event) => { } //and ended
+
+
 
 const handleHelpToggle = (event) => {
     html.help.overlay.style.display = "block"
-}
+} //event handler that fires when the "Help" button is clicked
 function handleHelpCancel() {
     html.help.overlay.style.display = "none"
     html.other.add.focus()
-}
+
+    
+} //fires when the "Cancel" button is clicked in the "Help" overlay
 const handleAddToggle = () => {
     html.add.overlay.style.display = 'block'
 }
@@ -54,12 +62,13 @@ const handleAddCancel = () => {
 
 
 //SUBMIT AND ADD ORDER.
+// const addDataForm = html.add.form
+// const displayElement = document.querySelector('[data-column="ordered"]')
 
-const addDataForm = html.add.form
-const displayElement = document.querySelector('[data-column="ordered"]')
+
 
 const handleAddSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //prevent reload
     const order = {
         title: html.add.title.value,
         table: html.add.table.value,
@@ -75,12 +84,24 @@ const handleAddSubmit = (event) => {
     html.add.form.reset();
     html.add.overlay.style.display = 'none';
 };
+
+
+
+
 html.add.form.addEventListener('submit', handleAddSubmit)
 
 
-const handleEditToggle = (event) => { }
+const handleEditToggle = (event) => {  //Edit Block
+    html.edit.overlay.style.display = 'block'
+ }
+
 const handleEditSubmit = (event) => { }
-const handleDelete = (event) => { }
+
+
+const handleDelete = (event) => {
+    html.delete.overlay.style.display = '' 
+    html.other.add.focus()
+}
 html.add.cancel.addEventListener('click', handleAddCancel)
 html.other.add.addEventListener('click', handleAddToggle)
 html.add.form.addEventListener('submit', handleAddSubmit)
