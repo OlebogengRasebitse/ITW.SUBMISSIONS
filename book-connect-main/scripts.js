@@ -1,4 +1,6 @@
-const matches = books;
+import { booksPerPage, authors, genres, books } from './meta'
+console.log(BOOKS)
+// const matches = books;
 let page = 1;
 
 if (!books && !Array.isArray(books)) throw new Error('Source required') 
