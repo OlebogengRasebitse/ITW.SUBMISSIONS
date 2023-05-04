@@ -35,17 +35,17 @@ const handleDragOver = (event) => {
 
 // actions for when button is clicked
 
+let dragged 
 
 const handleDragStart = (event) => { 
-  
+  dragged = event.target;
 }//called when a drag operation is started 
 const handleDragEnd = (event) => { } //and ended
 
 
-
-const handleHelpToggle = (event) => {
+const handleHelpToggle = (event) => {//event handler that fires when the "Help" button is clicked
     html.help.overlay.style.display = "block"
-} //event handler that fires when the "Help" button is clicked
+} 
 function handleHelpCancel() {
     html.help.overlay.style.display = "none"
     html.other.add.focus()

@@ -1,36 +1,80 @@
-import { booksPerPage, authors, genres, books } from './meta'
-console.log(BOOKS)
-// const matches = books;
-let page = 1;
-
-if (!books && !Array.isArray(books)) throw new Error('Source required') 
-if (!range && range.length < 2) throw new Error('Range must be an array with two numbers')
+import { booksPerPage, authors, genres, books } from './data.js'
 
 
-day = {   //OBJECT
-    dark: '10, 10, 20',
-    light: '255, 255, 255',
-}
+// //Test code
+// const element = document.querySelector('body > main > button')
+// element.innerHTML = "kkk"
 
-night = {   //OBJECT
-    dark: '255, 255, 255',
-    light: '10, 10, 20',
-}
-///////////////////////////////////
+// ////////////////////////////////////
 
-const fragment = document.querySelector()
-const extracted = books.slice(0, 36)
 
-// for ({ author, image, title, id }; extracted; i++) {
-//     const preview = createPreview({
-//         author,
-//         id,
-//         image,
-//         title
-//     })
+
+// const range = [12, 24]; // Not sure about this. just added the number for control.
+
+// if (!books || !Array.isArray(books)) {
+//   throw new Error('Source required');
+// }
+
+// if (!range || !Array.isArray(range) || range.length !== 2) {
+//   throw new Error('Range must be an array with two numbers');
+// }
+
+
+// const menu = document.querySelector('overlay__content');
+// const themeMenu = document.querySelector('overlay__input');
+
+// menu.addEventListener('click, function(){
+//     menu.classList.toggle('is-active');
+//     themeMenu.classList.toggle('active');)
+
+
+
+
+// const day = {   //OBJECT
+//     dark: '10, 10, 20',
+//      light: '255, 255, 255',
+//  }
+
+// const night = {   //OBJECT
+//      dark: '255, 255, 255',
+//      light: '10, 10, 20',
+//  }
+// console.log(night)
+
+// const themeSelect = document.querySelector('[data-settings-theme]');
+
+
+// themeSelect.addEventListener('change', () => {
+//   const theme = themeSelect.value;
+
+//   if (theme === 'night') {
+//     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
+//     document.documentElement.style.setProperty('--color-light', '10, 10, 20');
+//   } else if (theme === 'day') {
+//     document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
+//     document.documentElement.style.setProperty('--color-light', '255, 255, 255');
+//   }
+// });
+
+//   const fragment = document.querySelector('body > header > div > div:nth-child(2) > button:nth-child(2) > svg');
+//   const extracted = books.slice(0, 36);
+
+//   for (let i = 0; i < extracted.length; i++){
+//   const { author, image, title, id } = extracted[i];  // Use [i] to access the current item
+//   const createPreview = []
+//       const preview = createPreview({
+//           author,
+//           id,
+//           image,
+//           title
+//       });  
+//       fragment.appendChild(preview);
+
+//     }
+    
 
 //     fragment.appendChild(preview)
-// }
+
 
 // data-list-items.appendChild(fragment)
 
@@ -40,22 +84,22 @@ const extracted = books.slice(0, 36)
 // element = 'All Genres'
 // genres.appendChild(element)
 
-// for ([id, name]; Object.entries(genres); i++) {
+// for ([id, title]; Object.entries(genres); i++) { //changed name to tittle
 //     document.createElement('option')
 //     element.value = value
 //     element.innerText = text
 //     genres.appendChild(element)
 // }
 
-// data-search-genres.appendChild(genres)
+//  data-search-genres.appendChild(genres)
 
-// const authors = document.createDocumentFragment()
+//  const authors = document.createDocumentFragment()
 // element = document.createElement('option')
 // element.value = 'any'
 // element.innerText = 'All Authors'
 // authors.appendChild(element)
 
-// for ([id, name];Object.entries(authors); id++) {
+// for ([id, title];Object.entries(authors); id++) {
 //     document.createElement('option')
 //     element.value = value
 //     element = text
@@ -67,8 +111,8 @@ const extracted = books.slice(0, 36)
 // data-settings-theme.value === window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
 // v = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches? 'night' | 'day'
 
-// documentElement.style.setProperty('--color-dark', css[v].dark);
-// documentElement.style.setProperty('--color-light', css[v].light);
+// document.Element.style.setProperty('--color-dark', css[v].dark);
+// document.Element.style.setProperty('--color-light', css[v].light);
 // data-list-button = "Show more (books.length - BOOKS_PER_PAGE)"
 
 // data-list-button.disabled = !(matches.length - [page * BOOKS_PER_PAGE] > 0)
@@ -89,12 +133,22 @@ const extracted = books.slice(0, 36)
 //     page = page + 1
 // }
 
-//  data-header-search.click() {
-//     data-search-overlay.open === true ;
-//     data-search-title.focus();
-// }
 
-// data-search-form.click(filters) {
+
+
+//Search button 
+ const searchButton = document.querySelector('[data-header-search]');
+ const searchOverlay = document.querySelector('[data-search-overlay]');
+ const searchTitle = document.querySelector('[data-search-title]');
+ 
+ searchButton.addEventListener('click', () => {
+   searchOverlay.open = true;
+   searchTitle.focus();
+ });
+
+
+
+//  data-search-form.click(filters) {
 //     preventDefault()
 //     const formData = new FormData(event.target);
 //     const filters = Object.fromEntries(formData);
@@ -118,30 +172,40 @@ const extracted = books.slice(0, 36)
     
 
 //     data-list-items.innerHTML = ''
-//     const anotherFragment = document.createDocumentFragment();
-//     const anotherExtracted = source.slice(range[0], range[1]);
+//////////////////////////////////////////////////
 
-//     for ({ author, image, title, id }; extracted; i++) {
-//         const { author: authorId, id, image, title } = props
+const fragment = document.createDocumentFragment();            
+const extract = books.slice(0,36) //source.slice(range[0], range[1])   // commented out source and replaced it with books to display the 36 books
+console.log(books[0])
+const inco = document.querySelector('[data-list-items]') // created a variable and took the empty div from HTML line 93
 
-//         element = document.createElement('button')
-//         element.classList = 'preview'
-//         element.setAttribute('data-preview', id)
+for ( const {authors, image, title, id } of  extract) {       // added s on author, turned it into a for loop
+    //const { author: authorId, id, image, title } = props
 
-//         element.innerHTML = /* html */ `
-//             <img
-//                 class="preview__image"
-//                 src="${image}"
-//             />
-            
-//             <div class="preview__info">
-//                 <h3 class="preview__title">${title}</h3>
-//                 <div class="preview__author">${authors[authorId]}</div>
-//             </div>
-//         `
+    let element = document.createElement('button')
+    element.classList = 'preview'
+    element.setAttribute('data-preview', id)
 
-//         fragment.appendChild(element)
-//     }
+    element.innerHTML = /* html */ `
+        <img
+            class ="preview__image"
+            src="${image}"
+        />
+        
+        <div class="preview__info">
+            <h3 class="preview__title">${title}</h3>
+            // <div class="preview__author">${"authors[authorId]"}</div>
+        </div>
+    `
+
+    fragment.appendChild(element)
+}
+
+inco.appendChild(fragment)      // appended the fragment into inco 
+
+
+
+    ////////////////////////
     
 //     data-list-items.appendChild(fragments)
 //     initial === matches.length - [page * BOOKS_PER_PAGE]
