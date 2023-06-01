@@ -321,27 +321,29 @@ inco.appendChild(fragment)
 //     data-settings-overlay).open === false
 // }
 
-// data-list-items.addEventListener('click', (event) => {
-//     const pathArray = Array.from(event.path || event.composedPath());
-//     let active = null;
+data-list-items.addEventListener('click', (event) => {
+    const pathArray = Array.from(event.path || event.composedPath());
+    let active = null;
 
-//     for (const node of pathArray) {
-//         if (active) break;
-//         const previewId = node?.dataset?.preview;
+    for (const node of pathArray) {
+        if (active) break;
+        const previewId = node?.dataset?.preview;
     
-//         for (const singleBook of books) {
-//             if (singleBook.id === previewId) {
-//                 active = singleBook;
-//                 break;
-//             }
-//         } 
-//     }
-//     // handle the "active" book object here
-// });
-//     if !active return
-//     data-list-active.open === true
-//     data-list-blur + data-list-image === active.image
-//     data-list-title === active.title
-    
-//     data-list-subtitle === '${authors[active.author]} (${Date(active.published).year})'
-//     data-list-description === active.description
+        for (const singleBook of books) {
+            if (singleBook.id === previewId) {
+                active = singleBook;
+                break;
+            }
+        } 
+    }
+
+    if (active) {
+        data-list-active.open = true;
+        data-list-blur.style.backgroundImage = `url(${active.image})`;
+        data-list-image.src = active.image;
+        data-list-title.textContent = active.title;
+        data-list-subtitle.textContent = `${authors[active.author]} (${new Date(active.published).getFullYear()})`;
+        data-list-description.textContent = active.description;
+      }
+    }
+);
